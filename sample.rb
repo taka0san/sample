@@ -29,6 +29,25 @@ def withdraw(balance, amount)
 end
 
 balance = 100000  # 残高
-puts "いくら引き落としますか？（手数料110円かかります）"
-money = gets.to_i
-withdraw(balance, money)
+# puts "いくら引き落としますか？（手数料110円かかります）"
+# money = gets.to_i
+# withdraw(balance, money)
+
+
+class Pockemon
+  def initialize
+    puts "鳴き声を設定してください"
+    @sounds = gets.chomp
+    puts "攻撃力を設定してください"
+    @attack = gets.chomp
+  end
+end
+
+class Pikachu < Pockemon
+  def status
+    puts "鳴き声は#{@sounds}です。攻撃力は#{@attack}です"
+  end
+end
+
+pikachu = Pikachu.new
+pikachu.status
