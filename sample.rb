@@ -13,7 +13,7 @@ profile2[:address] = "愛媛"
 
 profiles << profile2
 
-# puts profiles
+puts profiles
 
 
 def withdraw(balance, amount)
@@ -29,9 +29,9 @@ def withdraw(balance, amount)
 end
 
 balance = 100000  # 残高
-# puts "いくら引き落としますか？（手数料110円かかります）"
-# money = gets.to_i
-# withdraw(balance, money)
+puts "いくら引き落としますか？（手数料110円かかります）"
+money = gets.to_i
+withdraw(balance, money)
 
 
 class Pockemon
