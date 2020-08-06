@@ -13,7 +13,7 @@ profile2[:address] = "愛媛"
 
 profiles << profile2
 
-puts profiles
+# puts profiles
 
 
 def withdraw(balance, amount)
@@ -29,9 +29,9 @@ def withdraw(balance, amount)
 end
 
 balance = 100000  # 残高
-puts "いくら引き落としますか？（手数料110円かかります）"
-money = gets.to_i
-withdraw(balance, money)
+# puts "いくら引き落としますか？（手数料110円かかります）"
+# money = gets.to_i
+# withdraw(balance, money)
 
 
 class Pockemon
@@ -49,5 +49,27 @@ class Pikachu < Pockemon
   end
 end
 
-pikachu = Pikachu.new
-pikachu.status
+# pikachu = Pikachu.new
+# pikachu.status
+
+input_line = gets.to_i
+i = 1
+while i <= input_line
+    word = gets.chomp
+    if word[-1] == "s" || word[-1] == "o" || word[-1] == "x" || word[-1] == "s" || word[-2..-1] == "sh" || word[-2..-1] == "ch"
+        word += "es"
+    elsif word[-1] == "f"
+        word.slice!(-1)
+        word += "ves"
+    elsif word[-2..-1] == "fe"
+        word.slice!(-2..-1)
+        word += "ves"
+    elsif word[-1] == "y" && word[-2] == "a" || word[-1] == "y" && word[-2] == "i" || word[-1] == "y" && word[-2] == "u" || word[-1] == "y" && word[-2] == "e" || word[-1] == "y" && word[-2] == "o"
+        word.slice!(-1)
+        word += "ies"
+    else
+        word += "s"
+    end
+    puts word
+    i += 1
+end
