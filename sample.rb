@@ -74,26 +74,26 @@ end
 #     i += 1
 # end
 
-input_line = gets.split.map(&:to_i)
-i = 1
-result = []
-input_line[0].times {result.push(0)}
-while i <= input_line[2]
-    num = gets.to_i
-    if input_line[1] > 0
-        input_line[1] -= 1
-        result[num - 1] += 1
-    end
-    input_line[0].times do |n|
-        if result[n] > 0
-           result[n] -= 1
-           result[num - 1] += 1
-       end
-    end
-    i += 1
-end
-result.each_with_index do |x, m|
-  if x == result.max
-    puts m + 1
-  end
-end
+# input_line = gets.split.map(&:to_i)
+# i = 1
+# result = []
+# input_line[0].times {result.push(0)}
+# while i <= input_line[2]
+#     num = gets.to_i
+#     if input_line[1] > 0
+#         input_line[1] -= 1
+#         result[num - 1] += 1
+#     end
+#     input_line[0].times do |n|
+#         if result[n] > 0
+#            result[n] -= 1
+#            result[num - 1] += 1
+#        end
+#     end
+#     i += 1
+# end
+# result.each_with_index do |x, m|
+#   if x == result.max
+#     puts m + 1
+#   end
+# end
