@@ -52,24 +52,48 @@ end
 # pikachu = Pikachu.new
 # pikachu.status
 
-input_line = gets.to_i
+# input_line = gets.to_i
+# i = 1
+# while i <= input_line
+#     word = gets.chomp
+#     if word[-1] == "s" || word[-1] == "o" || word[-1] == "x" || word[-1] == "s" || word[-2..-1] == "sh" || word[-2..-1] == "ch"
+#         word += "es"
+#     elsif word[-1] == "f"
+#         word.slice!(-1)
+#         word += "ves"
+#     elsif word[-2..-1] == "fe"
+#         word.slice!(-2..-1)
+#         word += "ves"
+#     elsif word[-1] == "y" && word[-2] == "a" || word[-1] == "y" && word[-2] == "i" || word[-1] == "y" && word[-2] == "u" || word[-1] == "y" && word[-2] == "e" || word[-1] == "y" && word[-2] == "o"
+#         word.slice!(-1)
+#         word += "ies"
+#     else
+#         word += "s"
+#     end
+#     puts word
+#     i += 1
+# end
+
+input_line = gets.split.map(&:to_i)
 i = 1
-while i <= input_line
-    word = gets.chomp
-    if word[-1] == "s" || word[-1] == "o" || word[-1] == "x" || word[-1] == "s" || word[-2..-1] == "sh" || word[-2..-1] == "ch"
-        word += "es"
-    elsif word[-1] == "f"
-        word.slice!(-1)
-        word += "ves"
-    elsif word[-2..-1] == "fe"
-        word.slice!(-2..-1)
-        word += "ves"
-    elsif word[-1] == "y" && word[-2] == "a" || word[-1] == "y" && word[-2] == "i" || word[-1] == "y" && word[-2] == "u" || word[-1] == "y" && word[-2] == "e" || word[-1] == "y" && word[-2] == "o"
-        word.slice!(-1)
-        word += "ies"
-    else
-        word += "s"
+result = []
+input_line[0].times {result.push(0)}
+while i <= input_line[2]
+    num = gets.to_i
+    if input_line[1] > 0
+        input_line[1] -= 1
+        result[num - 1] += 1
     end
-    puts word
+    input_line[0].times do |n|
+        if result[n] > 0
+           result[n] -= 1
+           result[num - 1] += 1
+       end
+    end
     i += 1
+end
+result.each_with_index do |x, m|
+  if x == result.max
+    puts m + 1
+  end
 end
