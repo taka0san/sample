@@ -98,26 +98,42 @@ end
 #   end
 # end
 
-time = gets.split.map(&:to_i)
-time_after = time[1] + time[2]
-num = gets.to_i
-i = 1
-result = []
-while i <= num
-    clock = gets.split.map(&:to_i)
-    n = clock[0] * 60 + clock[1] + time_after
-    if n < 540
-        n -= time_after
-        result << n
-    end
-    i += 1
+# time = gets.split.map(&:to_i)
+# time_after = time[1] + time[2]
+# num = gets.to_i
+# i = 1
+# result = []
+# while i <= num
+#     clock = gets.split.map(&:to_i)
+#     n = clock[0] * 60 + clock[1] + time_after
+#     if n < 540
+#         n -= time_after
+#         result << n
+#     end
+#     i += 1
+# end
+# a = result.max
+# a -= time[0]
+# b = a % 60
+# c = (a - b) / 60
+# if c < 10
+#     puts "0#{c}:#{b}"
+# else
+#     puts "#{c}:#{b}"
+# end
+
+a = []
+b = "33##3"
+a << "....##...."
+a << "....."
+# a[0][2..6] = "#"
+if a[0].include?("#")
+  puts "a"
 end
-a = result.max
-a -= time[0]
-b = a % 60
-c = (a - b) / 60
-if c < 10
-    puts "0#{c}:#{b}"
-else
-    puts "#{c}:#{b}"
+puts a
+
+block[0].times do |m|
+  block[1].times do |i|
+  map[num[0] - 1 - m][block[2] + i] = "#"
+  end
 end
