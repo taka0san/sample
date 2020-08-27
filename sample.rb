@@ -122,18 +122,30 @@ end
 #     puts "#{c}:#{b}"
 # end
 
-a = []
-b = "33##3"
-a << "....##...."
-a << "....."
-# a[0][2..6] = "#"
-if a[0].include?("#")
-  puts "a"
-end
-puts a
+# a = []
+# b = "33##3"
+# a << "....##...."
+# a << "....."
+# # a[0][2..6] = "#"
+# if a[0].include?("#")
+#   puts "a"
+# end
+# puts a
 
-block[0].times do |m|
-  block[1].times do |i|
-  map[num[0] - 1 - m][block[2] + i] = "#"
-  end
+# block[0].times do |m|
+#   block[1].times do |i|
+#   map[num[0] - 1 - m][block[2] + i] = "#"
+#   end
+# end
+
+i = 1
+num = 1234567890
+result = []
+while i <= num do
+  remainder = num % i
+  if remainder == 0 && i <= 10000000
+    result << i
+  end 
+  i += 1
 end
+puts result.sum
