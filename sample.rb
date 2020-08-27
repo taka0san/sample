@@ -138,14 +138,21 @@ end
 #   end
 # end
 
-i = 1
-num = 1234567890
-result = []
-while i <= num do
-  remainder = num % i
-  if remainder == 0 && i <= 10000000
-    result << i
-  end 
-  i += 1
+# i = 1
+# num = 1234567890
+# result = []
+# while i <= num do
+#   remainder = num % i
+#   if remainder == 0 && i <= 10000000
+#     result << i
+#   end 
+#   i += 1
+# end
+# puts result.sum
+
+num = [1,0,5]
+25.times do |i|
+  a = num[i] + num[i + 1] + num[i + 2]
+  num << a
 end
-puts result.sum
+puts num
