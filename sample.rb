@@ -150,9 +150,18 @@ end
 # end
 # puts result.sum
 
-num = [1,0,5]
-25.times do |i|
-  a = num[i] + num[i + 1] + num[i + 2]
-  num << a
+# num = [1,0,5]
+# 25.times do |i|
+#   a = num[i] + num[i + 1] + num[i + 2]
+#   num << a
+# end
+# puts num
+
+result = []
+20000.times do |i|
+  num = i + 1
+  if num % 3 == 0 || num.to_s.include?("3")
+    result << num
+  end
 end
-puts num
+puts result.sum
