@@ -176,4 +176,4 @@
 #   i += 1
 # end
 # puts result.group_by { |e| e }.sort_by { |e, v| -v.size }.map(&:first).first
-
+　
